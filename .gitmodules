@@ -1,0 +1,4 @@
+[submodule "osqp-sys/osqp"]
+	path = osqp-sys/osqp
+	url = https://github.com/osqp/osqp.git
+	branch = develop-1.0
