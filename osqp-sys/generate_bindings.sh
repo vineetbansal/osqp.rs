@@ -15,10 +15,11 @@ bindgen bindings.h -o src/bindings.rs \
 --whitelist-type OSQPData \
 --whitelist-type OSQPSettings \
 --whitelist-type OSQPWorkspace \
+--whitelist-type OSQPSolver \
 --whitelist-type linsys_solver \
---whitelist-type linsys_solver_type \
+--whitelist-type osqp_linsys_solver_type \
 --whitelist-type osqp_error_type \
---whitelist-type ffi_osqp_solve_status \
+--whitelist-type osqp_status_type \
 --whitelist-function osqp_setup \
 --whitelist-function osqp_solve \
 --whitelist-function osqp_cleanup \
@@ -48,3 +49,4 @@ bindgen bindings.h -o src/bindings.rs \
 --whitelist-function osqp_update_verbose \
 --whitelist-function osqp_update_time_limit \
 --whitelist-function osqp_set_default_settings \
+--opaque-type OSQPWorkspace
