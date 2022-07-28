@@ -61,7 +61,7 @@ impl<'a> Status<'a> {
     pub(crate) fn from_problem(prob: &'a Problem) -> Status<'a> {
         use std::os::raw::c_int;
         unsafe {
-            match (*(*prob.solver).info).status_val as c_int {
+            match (*(*prob.solver).info).status_val as u32 {
                 ffi::OSQP_SOLVED => Status::Solved(Solution { prob }),
                 ffi::OSQP_SOLVED_INACCURATE => Status::SolvedInaccurate(Solution { prob }),
                 ffi::OSQP_MAX_ITER_REACHED => Status::MaxIterationsReached(Solution { prob }),
